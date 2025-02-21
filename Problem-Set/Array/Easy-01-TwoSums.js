@@ -51,3 +51,25 @@ var twoSum = function (nums, target) {
 console.log(twoSum([2, 7, 11, 15], 9));
 console.log(twoSum([3, 2, 4], 6));
 console.log(twoSum([3, 3], 6));
+
+//==================================================================//
+function twoSum(nums, target) {
+  let sortedNums = nums
+    .map((val, index) => ({ val, index }))
+    .sort((a, b) => a.val - b.val);
+
+  let left = 0;
+  let right = sortedNums.length - 1;
+
+  while (left < right) {
+    let sum = sortedNums[left].val + sortedNums[right].val;
+
+    if (sum === target) {
+      return [sortedNums[left].index, sortedNums[right].index];
+    } else if (sum > target) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+}
