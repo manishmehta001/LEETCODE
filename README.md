@@ -1,0 +1,1 @@
+This repository contains complete, topic-wise Data Structures and Algorithms (DSA) problem-solving notes with a strong focus on LeetCode practice. It covers theory, optimized solutions, Big-O complexities, and LeetCode curated problems for interview preparation and competitive programming.
