@@ -33,7 +33,7 @@ const maxProfit = (prices) => {
   prices.forEach((price, day) => {
     findDayWisePrice.push({ day: day, price: price });
   });
-
+  console.log(findDayWisePrice);
   let minPriceObj = findDayWisePrice[0];
   let maxPriceObj = findDayWisePrice[0];
   let maxProfit = 0;
@@ -59,3 +59,20 @@ const maxProfit = (prices) => {
 };
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+
+//=================================================================================
+
+var maxProfit1 = function (prices) {
+  let buy = prices[0];
+  let profit = 0;
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] < buy) {
+      buy = prices[i];
+    } else if (prices[i] - buy > profit) {
+      profit = prices[i] - buy;
+    }
+  }
+  return profit;
+};
+
+console.log(maxProfit1([7, 1, 5, 3, 6, 4]));
